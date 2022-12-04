@@ -1,0 +1,19 @@
+{% if messages %}
+
+{% for message in messages %}
+<script>
+    // Swal.fire(
+    //     'Good job!',
+    //     '{{message}}',
+    //     'success'
+    // )
+    swal({
+        title: "Good job!",
+        text: "{{message}} % matched",
+        icon: "success",
+    });
+</script>
+{% endfor %}
+
+
+{% endif %}

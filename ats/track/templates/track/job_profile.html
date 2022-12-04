@@ -1,0 +1,30 @@
+{% extends 'track/base.html' %}
+{% load static %}
+{% block title %}
+| Job Profiles
+{% endblock title %}
+
+{% block content %}
+<div class="album py-5 bg-light">
+    <div class="container">
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            {% for job in jobs %}
+            <!-- <a href="">{{job.role}}</a> -->
+            <div class="card m-2 p-2">
+                <div class="card-header">
+                    Featured
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{job.role}}</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="{% url 'view_profile' job.id %}" class="btn btn-primary">Check</a>
+                </div>
+            </div>
+
+            <br>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}
